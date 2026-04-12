@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body >
+    <h1 id="first" style="color: rgb(209, 19, 19) ; background-color: pink;">hello coders</h1>
+    <h2 id="second">it is comming on dhanters</h2>
+    <ul id="listing"></ul>
+    <ul id="ten">
+        <li>jan</li>
+        <li>feb</li>
+        <li>mar</li>
+        <li>apr</li>
+        <li>may</li>
+    </ul>
+</body>
+<script>
+    const temp = document.querySelector("h2")
+    temp.style.backgroundColor = "green"
+    console.log(temp)
+
+    const newEle = document.createElement("h3")
+    newEle.textContent = "diwali aa rhi hai "
+    temp.after(newEle)
+    newEle.id = "third"
+    newEle.style.backgroundColor = "yellow"
+    newEle.style.color= "red"
+    // newEle.className = "diwali"
+    // newEle.className = "holi"
+    newEle.classList.add("diwali")
+    newEle.classList.add("holi")
+    // newEle.classList.remove("diwali")
+
+    newEle.style.fontSize = "50px"
+    temp.before(newEle)
+    // const list = document.createElement("li")
+    // const list2 = document.createElement("li")
+    // const list3 = document.createElement("li")
+    // const list4 = document.createElement("li")
+    // list.textContent = "Apple"
+    // list2.textContent = "Banana"
+    // list3.textContent = "Mango"
+    // list4.textContent = "milk"
+
+    // const unorderElement  = document.getElementById("listing")
+    // unorderElement.append(list)
+    // unorderElement.append(list2)
+    // unorderElement.prepend(list3)
+    // unorderElement.children[1].after(list4)
+    // console.log(newEle)
+
+
+
+    const names = ["Rahul","Mohit","Anjali", "Rohan","Sahil"]
+    const unorder = document.getElementById("listing")
+    const fragment = document.createDocumentFragment()
+
+    for(let name of names){
+        const list = document.createElement("li")
+        list.textContent = name
+        fragment.append(list)
+        console.log(name)
+    }
+    unorder.append(fragment)
+    // temp.remove()
+
+    const month = document.getElementById("ten")
+
+    //console.log(month.children)
+    const lister = document.createElement("li")
+    lister.textContent = "Help"
+    month.insertAdjacentElement("beforeend",lister)
+
+
+</script>
+</html>
