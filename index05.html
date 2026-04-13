@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            background-color: black;
+            background-image: url("https://images.pexels.com/photos/776636/pexels-photo-776636.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            border: 2px solid rgb(113, 57, 202);
+            padding: 10px 15px;
+            border-radius: 12px;
+        }
+
+        button {
+            padding: 8px 10px;
+            background-color: rgb(233, 103, 124);
+            border-radius: 9px;
+            color: white;
+            font-size: 20px;
+            border: 2px solid white;
+            font-weight: bold;
+        }
+
+        #parent {
+            position: relative;
+            height: 400px;
+            width: 400px;
+            display: flex;
+            border-radius: 12px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid white;
+            box-shadow: 1px 6px 20px 1px black;
+            /* filter: blur(8px); */
+        }
+
+        #parent::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("https://images.pexels.com/photos/776636/pexels-photo-776636.jpeg") center/cover no-repeat;
+            filter: blur(10px);
+            z-index: -1;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <h1>Love Calculater</h1>
+        <form>
+            <label for="Boy">Boy:</label>
+            <input type="text" id="Boy" placeholder="Enter Boy name" name="Boye" required>
+            <br><br>
+            <label for="Girl">Girl:</label>
+            <input type="text" id="Girl" placeholder="Enter Girl name" name="Girl" required>
+            <br><br>
+            <button type="submit">Calculate</button>
+            <h2>Result: </h2>
+        </form>
+    </div>
+</body>
+<script>
+    const form = document.querySelector("form")
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const Boy = document.getElementById("Boy")
+        const Girl = document.getElementById("Girl")
+
+        const l1 = Boy.value.length
+        const l2 = Girl.value.length
+
+        const result = Math.pow(l1 + l2, 3) % 101;
+        const ans = document.querySelector("h2")
+        ans.textContent = `Result: ${result}`
+    })
+</script>
+
+</html>
