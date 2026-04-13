@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote generator</title>
+</head>
+
+<body style="background-color: black; color: white; height: 100vh; display: flex; justify-content: center;  align-items: center;">
+    <div>
+        <h2>hello there</h2>
+        <button>Click me</button>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector("button")
+    const name = document.querySelector("h2")
+    const names = ["🌸","✨","💐","captain america","iron man", "thor"]
+
+    btn.addEventListener('click',()=>{
+        let index = Math.floor(Math.random()*6)
+        name.textContent = names[index]
+        
+    })
+
+</script>
+</html>
