@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-image: url("https://images.pexels.com/photos/14907378/pexels-photo-14907378.jpeg");
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            color: white;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #parent{
+            /* background-image: url("https://images.pexels.com/photos/32716796/pexels-photo-32716796.jpeg"); */
+            position: relative;
+            height: 400px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: green; */
+        }
+
+          /* #parent::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("https://images.pexels.com/photos/14907378/pexels-photo-14907378.jpeg") center/cover no-repeat;
+            filter: blur(5px);
+            z-index: -1;
+            
+        } */
+        input{
+            padding: 15px 20px;
+            font-size: 19px;
+            border-radius: 7px;
+        }
+        button{
+            margin: 30px 0 ;
+            padding: 10px 20px;
+            font-weight: 700;
+            font-size: large;
+            border-radius: 7px;
+            border: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <h1>Income Tax Calculator</h1>
+        <form>
+            <label for="income"></label>
+            <input type="number" id="income" name="income">
+            <br>
+            <button type="submit"> Calculate income</button>
+            <button type="reset">Reset</button>
+        </form>
+
+        <h2>Total Tax:- </h2>
+    </div>
+</body>
+<script>
+
+    const form  =  document.querySelector("form")
+   
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+
+        const income = document.querySelector("#income")
+        const amount = parseInt(income.value)
+
+        const result = document.querySelector("h2")
+        let totalTax = 0;
+        if(amount <= 1200000)
+            totalTax = 0;
+        else if(amount <= 1600000)
+            totalTax = (amount - 1200000)*0.15;
+        else if(amount <= 2000000)
+            totalTax = (amount - 1600000)*0.20 +60000;
+        else if(amount <= 2400000)
+            totalTax = (amount - 2000000)*0.25 +60000 + 80000;
+        else
+            totalTax = (amount - 2400000)*0.30 + 60000 +80000 +100000
+
+        result.textContent = `Total Tax:- ${totalTax}`
+      
+        // form.reset()
+    })
+        form.addEventListener('reset',()=>{
+            form.reset()
+            document.querySelector("h2").textContent = `total Tax:- `
+        })
+
+
+
+</script>
+</html>
