@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <h1>Olympic Countdown Timer</h1>
+        <div id="result" style="margin-top: 20px; font-size: 50px;"></div>
+    </div>
+</body>
+<script>
+    const  result = document.getElementById("result")
+   
+    // console.log(current)
+    setInterval(()=>{
+         const current = Date.now()
+          const olympic  = new Date(2028,6,14).getTime();
+    let time  = olympic - current
+    const day = Math.floor((time)/(1000*60*60*24));
+    time%=1000*60*60*24
+    const hour = Math.floor((time)/(1000*60*60));
+    time%=1000*60*60
+    const min = Math.floor((time)/(1000*60));
+    time%=1000*60
+    const sec = Math.floor((time)/(1000));
+    time%=1000;
+    result.textContent = `${day}:Days  ${hour}:Hour  ${min}:Min  ${sec}:Sec `
+    },1000)
+
+</script>
+</html>
