@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #4a90e2, #50c1e9);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #2a3d66;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: #b0c4de;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: #50c1e9;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #3a9bc7;
+}
+
+.result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    background: #364d79;
+    padding: 1rem;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Astrologer Insights</h1>
+        <form id="astroForm">
+            <label for="name">First Name</label>
+            <input type="text" id="name" name="name" required>
+
+
+            <label for="Surname">Surname</label>
+            <input type="text" id="surname" name="surname" required>
+
+
+            <label for="day">Date of Birth (Day):</label>
+            <input type="number" id="day" name="day" required>
+
+
+            <label for="month">Month</label>
+            <input type="number" id="month" name="month" required>
+
+
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" required>
+
+            <input type="submit" value="Get Insights">
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+<script src="index09.js"></script>
+</html>
+
+
+
+
+
+
