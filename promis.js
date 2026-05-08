@@ -150,16 +150,31 @@ function orderDeliver(item) {
 //     })
 // })
 
- orderpayment(orderDitail)
- .then((orderDitail)=>orderPraper(orderDitail))
- .then((orderDitail)=>orderPickUp(orderDitail))
- .then((orderDitail)=>orderDeliver(orderDitail))
- .then((orderDitail)=>{
-    console.log(orderDitail)
- })
- .catch((error)=>{
-    console.log("Error: ",error)
- }).
- finally(()=>{
-    console.log("i am doing cleanup")
- })
+//  orderpayment(orderDitail)
+//  .then((orderDitail)=>orderPraper(orderDitail))
+//  .then((orderDitail)=>orderPickUp(orderDitail))
+//  .then((orderDitail)=>orderDeliver(orderDitail))
+//  .then((orderDitail)=>{
+//     console.log(orderDitail)
+//  })
+//  .catch((error)=>{
+//     console.log("Error: ",error)
+//  }).
+//  finally(()=>{
+//     console.log("i am doing cleanup")
+//  })
+
+async function ordering(){
+    try{
+    const response1 =  await orderpayment(orderDitail);
+    const response2 =  await orderPraper(response1)
+    const response3 =  await orderPickUp(response2)
+    const response4 =  await orderDeliver(response3)
+    console.log(response4)
+    }
+    catch(error){
+        console.log("Error",error)
+    }
+}
+
+ordering()
