@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & Event</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button>Click me</button>
+    <div id="box" style="height: 100px; width: 100px; background-color: maroon;"></div>
+    <!-- <p>I am the best </p> -->
+     <!-- <input id="input" type="text"> -->
+</body>
+<script>
+    // const btn = document.querySelector("button")
+    // const para = document.querySelector("p")
+    // btn.addEventListener("click",()=>{
+    //     para.textContent = "prem is best"
+    //     para.style.backgroundColor= "green"
+    // })
+
+//-----------------------------------------------------------------------
+
+
+    // const body = document.querySelector("body")
+    // btn.addEventListener("click", ()=>{
+    //     body.style.backgroundColor = "skyblue"
+    // })
+
+//-----------------------------------------------------------------------
+
+    // const input  = document.getElementById("input")
+    // const header = document.createElement("h1")
+    // input.after(header)
+    // btn.addEventListener("click",()=>{
+    //     // let value = input.value
+    //     header.textContent = input.value
+        
+    // })
+    
+
+//-----------------------------------------------------------------------
+
+const btn = document.querySelector("button")
+const box =  document.getElementById("box")
+    let value = false
+btn.addEventListener("click",()=>{
+    if(!value){
+        box.style.display = "none"
+        btn.textContent= "Show"
+        value = true
+    }else{
+        btn.textContent= "Hide"
+        box.style.display = "block"
+        value = false
+        
+    }
+})
+
+
+
+</script>
+</html>
