@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color changer</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .colors{
+            border: 2px solid white;
+            padding: 5px 10px;
+            color: white;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <button id="red" class="colors" style="background-color: red;">Red</button>
+        <button id="green" class="colors" style="background-color: green;">Green</button>
+        <button id="orange" class="colors" style="background-color: orange;">Orange</button>
+        <button id="blue" class="colors" style="background-color: blue;">Blue</button>
+        <button id="purple" class="colors" style="background-color: purple;">Purple</button>
+    </div>
+</body>
+<script>
+    const body = document.querySelector("body")
+    const parent = document.getElementById("parent")
+    parent.addEventListener('click',(e)=>{
+        const child = e.target
+        body.style.backgroundColor = child.id
+    })
+</script>
+</html>
